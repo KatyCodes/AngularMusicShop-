@@ -26,7 +26,7 @@ import { Album } from './album.model';
       artist.value='';
       price.value='';
       genre.value='';
-    ">Add</button>
+    " class='btn'>Add</button>
   `
 })
 

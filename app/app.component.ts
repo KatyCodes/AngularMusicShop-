@@ -8,7 +8,13 @@ import { Album } from './album.model';
     <h1>Angular 2 Music Store</h1>
     <album-list
       [childAlbumList]="masterAlbumList"
+      [childGenreList]="masterGenreList"
+      (albumEditSender)="setAlbumToEdit($event)"
     ></album-list>
+    <edit-album
+      [albumToEdit]="selectedAlbum"
+      (doneClickedSender)="finishedEditing()"
+    ></edit-album>
     <new-album
       (newAlbumSender)="addAlbum($event)"
     ></new-album>
@@ -24,7 +30,19 @@ export class AppComponent {
     new Album ("Like A Prayer", "Madonna", 8.99, "Pop"),
     new Album ("Beethoven Collection", "Beethoven", 18.99, "Classical")
   ];
+  public masterGenreList: string[] = ["Rock", "Pop", "Classical"];
+
+  selectedAlbum: Album = null;
+
   addAlbum(newAlbum) {
     this.masterAlbumList.push(newAlbum);
+  }
+
+  setAlbumToEdit(albumToEdit) {
+    this.selectedAlbum = albumToEdit;
+  }
+
+  finishedEditing() {
+    this.selectedAlbum = null;
   }
 }
