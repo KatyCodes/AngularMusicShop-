@@ -8,6 +8,7 @@ import { EditAlbumComponent } from './edit-album.component';
 import { GenrePipe } from './genre.pipe';
 import { UniqueGenrePipe } from './unique-genre.pipe';
 import { SearchPipe } from './search.pipe';
+import { ShoppingCartComponent } from './shopping-cart.component';
 
 @NgModule({
   imports: [ BrowserModule, FormsModule ],
@@ -18,7 +19,8 @@ import { SearchPipe } from './search.pipe';
     EditAlbumComponent,
     GenrePipe,
     UniqueGenrePipe,
-    SearchPipe
+    SearchPipe,
+    ShoppingCartComponent
   ],
   bootstrap:    [ AppComponent ]
 })

@@ -6,17 +6,27 @@ import { Album } from './album.model';
   template: `
   <div class="container">
     <h1>Angular 2 Music Store</h1>
-    <album-list
-      [childAlbumList]="masterAlbumList"
-      (albumEditSender)="setAlbumToEdit($event)"
-    ></album-list>
-    <edit-album
-      [albumToEdit]="selectedAlbum"
-      (doneClickedSender)="finishedEditing()"
-    ></edit-album>
-    <new-album
-      (newAlbumSender)="addAlbum($event)"
-    ></new-album>
+    <div class = "row">
+      <div class="col-sm-9">
+        <album-list
+          [childAlbumList]="masterAlbumList"
+          (albumEditSender)="setAlbumToEdit($event)"
+          (albumBuySender)="setAlbumToBuy($event)"
+        ></album-list>
+        <edit-album
+          [albumToEdit]="selectedAlbum"
+          (doneClickedSender)="finishedEditing()"
+        ></edit-album>
+        <new-album
+          (newAlbumSender)="addAlbum($event)"
+        ></new-album>
+      </div>
+      <div class="col-sm-3">
+      <shopping-cart
+      [albumsToBuy]="shoppingCart"
+      ></shopping-cart>
+      </div>
+    </div>
   </div>
   `
 })
@@ -30,6 +40,8 @@ export class AppComponent {
     new Album ("Beethoven Collection", "Beethoven", 18.99, "Classical")
   ];
 
+  public shoppingCart: Album[] = [];
+
   selectedAlbum: Album = null;
 
   addAlbum(newAlbum) {
@@ -42,5 +54,9 @@ export class AppComponent {
 
   finishedEditing() {
     this.selectedAlbum = null;
+  }
+
+  setAlbumToBuy(album) {
+    this.shoppingCart.push(album);
   }
 }

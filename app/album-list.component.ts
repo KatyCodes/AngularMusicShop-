@@ -22,6 +22,7 @@ import { SearchPipe } from './search.pipe';
     <h4>{{album.genre}}</h4>
     <h4>\${{album.price}}</h4>
     <button (click)="editClicked(album)" class='btn'>Edit</button>
+    <button (click)="buyClicked(album)" class='btn'>Add to Cart</button>
   </div>
   `
 })
@@ -29,13 +30,17 @@ import { SearchPipe } from './search.pipe';
 export class AlbumListComponent {
   @Input() childAlbumList: Album[];
   @Output() albumEditSender = new EventEmitter();
-
+  @Output() albumBuySender = new EventEmitter();
   public genreDisplay: string = "all";
   public searchTerm: string = "";
 
   editClicked(albumToEdit){
     this.albumEditSender.emit(albumToEdit);
   };
+
+  buyClicked(album){
+    this.albumBuySender.emit(album);
+  }
 
   onChange(newGenre) {
     this.genreDisplay = newGenre;
