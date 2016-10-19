@@ -22,7 +22,7 @@ import { Album } from './album.model';
       <label>Genre:</label>
       <input [(ngModel)]="albumToEdit.genre" class='form-control'>
     </div>
-    <button (click)="doneClicked()" class='btn'>Done...</button>
+    <button (click)="doneClicked()" class='btn'>Save</button>
   </div>
    `
 
@@ -33,5 +33,6 @@ export class EditAlbumComponent {
   @Output() doneClickedSender = new EventEmitter();
   doneClicked() {
     this.doneClickedSender.emit();
+
   }
 }
