@@ -8,10 +8,25 @@ body {
 
 .well {
   background: white;
+  border: 2px solid black;
+  overflow: hidden;
 }
 
 .albumDisplay {
-  text-align: center
+  text-align: center;
+}
+
+.col-sm-12 .col-sm-3 .well {
+  min-height: 450px;
+}
+
+.col-sm-9 .col-sm-3 .well {
+    min-height: 375px;
+}
+
+.cartAlbums {
+  width: 100%;
+  text-align: center;
 }
 
 .img-responsive {
@@ -34,15 +49,50 @@ body {
   font-weight: bold;
 }
 
+.cartImage {
+  width: 60%;
+  left-margin: 20%;
+  border: 1px solid black;
+}
+
+.btn {
+  background: #fcc30a;
+  border: 1px solid black;
+}
+
+.btn:hover {
+  background: #fcd80a;
+}
+
+.btn:focus {
+  outline: 0 !important;
+}
+
+.btn-checkout {
+  width: 100%;
+}
+
+.btn-remove {
+  width: 40%;
+}
+
 #genreSearch {
   min-width: 150px;
 }
 
+#quantityInput {
+  width: 60px;
+  text-align: center;
+  display: inline;
+}
+
 .nav {
+  border: 2px solid black;
 
   h1 {
     font-family: 'Vampiro One', cursive;
     font-size: 48px;
+    text-shadow: 1px 1px 1px #fcc30a;
   }
 
   .pull-right {
@@ -53,4 +103,11 @@ body {
     margin-right: 20px;
   }
 
+}
+li {
+  list-style-type: none;
+}
+
+ul {
+  padding-left: 0;
 }
