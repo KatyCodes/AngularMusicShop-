@@ -21,20 +21,25 @@ import { Album } from './album.model';
       <label>Genre:</label>
       <input #genre class='form-control'>
     </div>
-    <button (click)="addAlbumClicked(name.value, artist.value, price.value, genre.value);
+    <div class='form-group'>
+      <label>Image Link:</label>
+      <input #image class='form-control'>
+    </div>
+    <button (click)="addAlbumClicked(name.value, artist.value, price.value, genre.value, image.value);
       name.value='';
       artist.value='';
       price.value='';
       genre.value='';
+      image.value='';
     " class='btn'>Add</button>
   `
 })
 
 export class NewAlbumComponent {
   @Output() newAlbumSender = new EventEmitter();
-  addAlbumClicked(name: string, artist: string, price: string, genre: string){
+  addAlbumClicked(name: string, artist: string, price: string, genre: string, image: string){
     var floatPrice = parseFloat(price);
-    var newAlbum = new Album(name, artist, floatPrice, genre);
+    var newAlbum = new Album(name, artist, floatPrice, genre, image);
     this.newAlbumSender.emit(newAlbum);
   }
 

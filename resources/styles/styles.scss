@@ -1,0 +1,56 @@
+body {
+  background: #d2d5db;
+}
+
+.container {
+  margin-top: 40px;
+}
+
+.well {
+  background: white;
+}
+
+.albumDisplay {
+  text-align: center
+}
+
+.img-responsive {
+  border: 1px solid black;
+}
+
+.btn-default, .btn-default:active, .btn-default:focus {
+  background: transparent !important;
+  border: 1px solid white !important;
+  color: white !important;
+  outline: none !important;
+}
+
+.btn-default:hover {
+  background: transparent;
+  border: 1px solid white;
+  border-left-width: 2px;
+  border-right-width: 2px;
+  color: white;
+  font-weight: bold;
+}
+
+#genreSearch {
+  min-width: 150px;
+}
+
+.nav {
+
+  h1 {
+    font-family: 'Vampiro One', cursive;
+    font-size: 48px;
+  }
+
+  .pull-right {
+    margin-top: 30px;
+  }
+
+  #artistSearch {
+    margin-right: 20px;
+  }
+
+}
