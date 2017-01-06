@@ -1,4 +1,4 @@
-# The Pacifica Resort
+# The Angular Music Shop
 Version 0.0.1: August 4, 2016
 by [Katy Henning](https://katycodes.github.io) and Mark Lawson
 
